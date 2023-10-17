@@ -1,2 +1,2 @@
-# First_Website_Project
- Project files for fake online bookstore named Readable
+# SD2_Assignments_Labs
+Assignments and labs from Fall 2023, CMPT 221
