@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--    a06_khan.html   HTML FAQ for MySQL commands 
+10/07/2023 Sufia Khan Original Program-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MySQL Reference </title>
+
+    <style>
+        table {background-color: darkseagreen; color:       black; border-collapse: collapse; border: 1px; border-color: black; font-family: Arial; font-weight: normal; margin-right: auto; margin-left: auto;}
+
+        th {background-color: gray; font-size: 17px; font-weight: bold;}
+
+        tr:nth-child(even) {background-color: silver;}
+
+        td {font-size: 15px; padding-left: 5px; padding-right: 5px;}
+
+        h1 {color: red;}
+    </style>
+</head>
+<body>
+    <header> 
+        <h1> My MySQL Reference Page </h1>
+    </header>
+    <hr>
+
+    <main>
+        <h2 style="text-align: center;"> Database Commands </h2>
+
+        <table border="1">
+            <tr>
+                <th>Commands</th>
+                <th>Syntax</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr>
+                <td>CREATE DATABASE</td>
+                <td>CREATE DATABASE dbName;</td>
+                <td>Used to create a new database</td>
+            </tr>
+
+            <tr>
+                <td>USE</td>
+                <td>USE dbName;</td>
+                <td>To use a certain database</td>
+            </tr>
+
+            <tr>
+                <td>DROP DATABASE</td>\
+                <td>DROP DATABASE dbName;</td>
+                <td>To drop a certain database</td>
+            </tr>
+
+            <tr>
+                <td>ALTER DATABASE</td>
+                <td>ALTER DATABASE dbName;</td>
+                <td>To modify a database</td>
+            </tr>
+        </table>
+        <br>
+
+        <h2 style="text-align: center;"> Table Column Commands </h2>
+
+        <table border="1">
+            <tr>
+                <th>Commands</th>
+                <th>Syntax</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr>
+                <td>CREATE TABLE</td>
+                <td>CREATE TABLE tableName (
+                        Column1 DATATYPE, 
+                        Column2 DATATYPE,...
+                    );
+                </td>
+                <td>To create a table and its columns</td>
+            </tr>
+
+            <tr>
+                <td>RENAME TABLE</td>
+                <td>RENAME TABLE oldName TO newName;</td>
+                <td>To rename a table</td>
+            </tr>
+
+            <tr>
+                <td>DROP TABLE</td>
+                <td>DROP TABLE tableName;</td>
+                <td>To drop a table and its data</td>
+            </tr>
+
+            <tr>
+                <td>DROP COLUMN</td>
+                <td>ALTER TABLE tableName DROP COLUMN columnName;</td>
+                <td>To drop a column from a table</td>
+            </tr>
+
+        </table>
+        <br>
+
+        <h2 style="text-align: center;"> Column Attributes and Modifiers </h2>
+
+        <table border="1">
+
+            <tr>
+                <th>Commands</th>
+                <th>Syntax</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr>
+                <td>PRIMARY KEY</td>
+                <td>ALTER TABLE tableName ADD CONSTRAINT PRIMARY KEY(columnName);</td>
+                <td>To set a column as the primary key for a table</td>
+            </tr>
+
+            <tr>
+                <td>UNIQUE</td>
+                <td>ALTER TABLE tableName ADD CONSTRAINT UNIQUE(columnName);</td>
+                <td>To set a column to have unique values in a table </td>
+            </tr>
+
+            <tr>
+                <td>NOT NULL</td>
+                <td>ALTER TABLE tableName MODIFY columnName DATATYPE NOT NULL;</td>
+                <td>To set a column to not accept null values in a table</td>
+            </tr>
+
+            <tr>
+                <td>DEFAULT</td>
+                <td>ALTER TABLE tableName ALTER columnName SET DEFAULT defaultValue;</td>
+                <td>To set a default value for a column when no specific data value is specified</td>
+            </tr>
+
+            <tr>
+                <td>AUTO_INCREMENT</td>
+                <td>CREATE TABLE tableName (column1 DATATYPE AUTO_INCREMENT,...);</td>
+                <td>To make a column auto increment numbers, starts at 1 by default</td>
+            </tr>
+
+            <tr>
+                <td> AUTO_INCREMENT custom value</td>
+                <td>ALTER TABLE tableName AUTO_INCREMENT = customValue;</td>
+                <td>To make the auto increment in the table start at a custom value instead of 1 by default</td>
+            </tr>
+
+            <tr>
+                <td>FOREIGN KEY</td>
+                <td>ALTER TABLE tableName ADD CONSTRAINT keyName FOREIGN KEY(columnName) REFERENCES otherTableName(columnName);</td>
+                <td>To specify a column as a foreign key in a table</td>
+            </tr>
+
+        </table>
+        <br>
+
+        <h2 style="text-align: center;"> Table Data Commands </h2>
+
+        <table border="1">
+            
+            <tr>
+                <th>Commands</th>
+                <th>Syntax</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr>
+                <td>SELECT</td>
+                <td>SELECT * FROM tableName;</td>
+                <td>To display all the data in a table</td>
+            </tr>
+
+            <tr>
+                <td>ADD</td>
+                <td>ALTER TABLE tableName ADD columnName DATATYPE;</td>
+                <td>To add a column to an existing table</td>
+            </tr>
+
+            <tr>
+                <td>INSERT INTO</td>
+                <td>INSERT INTO tableName VALUES (data1, data2,...);</td>
+                <td>To insert data into a table</td>
+            </tr>
+
+            <tr>
+                <td>WHERE</td>
+                <td>SELECT * FROM tableName WHERE columnName = specificCriteria;</td>
+                <td>To select specific data from a table</td>
+            </tr>
+
+            <tr>
+                <td>UPDATE</td>
+                <td>UPDATE tableName SET columnName = newData;</td>
+                <td>To update data for all rows in a certain column of a table</td>
+            </tr>
+
+            <tr>
+                <td>DELETE</td>
+                <td>DELETE FROM tableName WHERE columnName = specificData</td>
+                <td>To delete a row from a table</td>
+            </tr>
+
+            <tr>
+                <td>ORDER BY</td>
+                <td>SELECT * FROM tableName ORDER BY last_name;</td>
+                <td>To display data from a table in a specific order</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <hr>
+        <p style="text-align: center;">
+            <small>     (C) Sufia Khan, 10/07/2023    </small>
+        </p>
+    </footer>
+    
+</body>
+</html>
